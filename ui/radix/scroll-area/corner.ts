@@ -1,15 +1,13 @@
 import { cva } from "class-variance-authority";
 
-const DEFAULT_COLOR = "white_black";
-
 const corner = cva("", {
+  defaultVariants: {
+    color: "white-black",
+  },
   variants: {
     color: {
-      white_black: "bg-white",
+      "white-black": "bg-white",
     },
-  },
-  defaultVariants: {
-    color: DEFAULT_COLOR,
   },
 });
 

@@ -2,8 +2,6 @@ import { BORDER, ROUNDED, SHADOW } from "@/ui/globals";
 import { cva } from "class-variance-authority";
 import { twMerge } from "tailwind-merge";
 
-const DEFAULT_COLOR = "neutral";
-
 const dialog = cva(
   twMerge(
     `fixed
@@ -11,22 +9,22 @@ const dialog = cva(
   top-1/2
   -translate-x-1/2
   -translate-y-1/2
-  data-[state=open]:animate-content-show
+  data-[state=open]:animate-cmdk-content-show
   focus:outline-none`,
     ROUNDED,
     SHADOW,
     BORDER,
   ),
   {
+    defaultVariants: {
+      color: "neutral",
+    },
     variants: {
       color: {
         neutral: `bg-neutral-50
         [&_[dialog-overlay]]:bg-neutral-100
         border-neutral-400`,
       },
-    },
-    defaultVariants: {
-      color: DEFAULT_COLOR,
     },
   },
 );

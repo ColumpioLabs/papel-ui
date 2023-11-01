@@ -1,10 +1,8 @@
 import { cva } from "class-variance-authority";
 
-const DEFAULT_COLOR = "white_black";
-
 const viewport = cva(
-  `data-[state=open]:animate-scaleIn
-  data-[state=closed]:animate-scaleOut
+  `data-[state=open]:animate-navigation-menu-scale-in
+  data-[state=closed]:animate-navigation-menu-scale-out
   relative
   mt-[10px]
   h-[var(--radix-navigation-menu-viewport-height)]
@@ -16,13 +14,13 @@ const viewport = cva(
   duration-300
   sm:w-[var(--radix-navigation-menu-viewport-width)]`,
   {
+    defaultVariants: {
+      color: "white-black",
+    },
     variants: {
       color: {
-        white_black: "bg-white",
+        "white-black": "bg-white",
       },
-    },
-    defaultVariants: {
-      color: DEFAULT_COLOR,
     },
   },
 );
